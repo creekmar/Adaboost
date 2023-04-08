@@ -1,6 +1,7 @@
 from dataclasses import dataclass
-A = 0
-B = 1
+A = False
+B = True
+
 
 @dataclass
 class Node:
