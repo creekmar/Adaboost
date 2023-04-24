@@ -3,6 +3,8 @@ Ming Creekmore
 Professor Jansen Orfan
 Introduction to AI
 
+Name: language.py
+
 6 ways to classify whether a sentence is dutch or english
 Each take in a word list and compare against either common words in eng/dutch or the last
 one that just counts v and w frequency

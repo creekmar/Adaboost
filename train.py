@@ -3,6 +3,8 @@ Ming Creekmore
 Professor Jansen Orfan
 Introduction to AI
 
+Name: train.py
+
 A program to learn how to tell the difference between English and Dutch language.
 Two different methods are used: A regular decision tree, and Adaboost
 The user can decide what to use based on command line arguments
@@ -194,7 +196,7 @@ def find_best_split(node_lst, index_lst):
     return best_tup, best_index
 
 
-def best_dt(node_lst, index_lst, count = 0, max_depth = 4):
+def best_dt(node_lst, index_lst, count = 0, max_depth = 2):
     """
     Determines the best decision tree using entropy. Decision tree will only go
     as deep as max_depth
@@ -303,7 +305,7 @@ def main():
                 f.write("dt\n")  # used to mark the file as a model of a decision tree
                 f.write(tree)
             else:
-                adaboost(node_list, index_lst, 4, f)
+                adaboost(node_list, index_lst, 3, f)
 
 
 if __name__ == '__main__':

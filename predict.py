@@ -2,7 +2,11 @@
 Ming Creekmore
 Professor Jansen Orfan
 Introduction to AI
-Program used to test a model, where the model is either a decision tree or an ensemble.
+
+Name: predict.py
+
+Program used to predict english or dutch language based on a model, 
+where the model is either a decision tree or an ensemble.
 """
 
 import string
@@ -100,9 +104,9 @@ def ensemble_test(ensemble, attr):
             else:
                 en += hyp[3]
     if nl > en:
-        return "NL"
+        return "nl"
     else:
-        return "EN"
+        return "en"
 
 
 def main():
@@ -111,13 +115,13 @@ def main():
     classify the test data
     Prints out what language the model predicts for each line
     Command line arguments are used to determine the filenames
-        Usage: test.py hypothesis.txt test_file.txt
+        Usage: predict.py hypothesis.txt test_file.txt
     The first line in the model file is used to determine whether adaboost or a decision
     tree model is loaded
     :return: None
     """
     if len(sys.argv) != 3:
-        print("Usage: test.py hypothesis.txt test_file.txt")
+        print("Usage: predict.py hypothesis.txt test_file.txt")
     else:
         with open(sys.argv[1]) as f:
             test_lst = read_test_data(sys.argv[2])
@@ -126,7 +130,7 @@ def main():
                 tree = make_tree(f)
                 for attr in test_lst:
                     lang = dt_testing(tree, attr)
-                    print(lang)
+                    print(lang.lower())
             else:
                 ens = read_ensemble(f)
                 for attr in test_lst:

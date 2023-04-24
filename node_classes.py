@@ -2,6 +2,9 @@
 Ming Creekmore
 Professor Jansen Orfan
 Introduction to AI
+
+Name: node_classes.py
+
 Classes to use for training and testing data. Node is used for training data
 Tree_Node is a general binary tree but is used in testing to represent the decision tree
 """
